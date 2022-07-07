@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <KSUDefine/KSAdCommonDefine.h>
 #import "KSAdUserInfo.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -29,7 +30,11 @@ typedef NS_ENUM(NSInteger, KSAdSDKType) {
 @property (nonatomic, readonly) KSAdUserInfo *userInfo;
 @property (nonatomic, copy) NSString *tkVersion;
 @property (nonatomic, copy) NSString *jsVersion;
-@property (nonatomic, copy) NSString *currentApiHost;
+#ifdef KSADIsDebugging
+/// 只能调试使用，会直接覆盖currentApiHost的内容，线上严禁调用
+@property (nonatomic, copy) NSString *currentApiHostDebug;
+#endif
+@property (nonatomic, copy, readonly) NSString *currentApiHost;
 @property (nonatomic, copy) NSString *currentEUApiHost;
 @property (nonatomic, copy) NSString *currentLiveHost;
 

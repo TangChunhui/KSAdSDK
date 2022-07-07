@@ -48,6 +48,10 @@ NS_ASSUME_NONNULL_BEGIN
  Array of views that are clickable.
  */
 - (void)registerContainer:(__kindof UIView *)containerView withClickableViews:(NSArray<__kindof UIView *> *_Nullable)clickableViews;
+/*
+ Similar to the registerContainer:withClickableViews:, the only difference is that the containerView can choose whether it is clickable or not
+ */
+- (void)registerContainer:(__kindof UIView *)containerView withClickableViews:(NSArray<__kindof UIView *> *_Nullable)clickableViews containerClickable:(BOOL)isClickable;
 /**
  Unregister ad view from the native ad.
  */
@@ -91,7 +95,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)nativeAd:(KSNativeAd *)nativeAd didFailWithError:(NSError *_Nullable)error;
 
 /**
- This method is called when native ad slot has been shown.
+ This method is called when native ad show everytime. Please don‘t use for exposure count. Please use 'nativeAdDidShow' for exposure count.
  */
 - (void)nativeAdDidBecomeVisible:(KSNativeAd *)nativeAd;
 
@@ -111,6 +115,35 @@ This method is called when another controller has been showed.
  @param interactionType : open appstore in app or open the webpage or view video ad details page.
  */
 - (void)nativeAdDidCloseOtherController:(KSNativeAd *)nativeAd interactionType:(KSAdInteractionType)interactionType;
+
+/**
+ This method is called when native ad show. Each ad is called back only once
+ */
+- (void)nativeAdDidShow:(KSNativeAd *)nativeAd;
+/**
+ This method is called when native ad ready to play.
+ */
+- (void)nativeAdVideoReadyToPlay:(KSNativeAd *)nativeAd;
+/**
+ This method is called when native ad start play finished.
+ */
+- (void)nativeAdVideoStartPlay:(KSNativeAd *)nativeAd;
+/**
+ This method is called when native ad play finished.
+ */
+- (void)nativeAdVideoPlayFinished:(KSNativeAd *)nativeAd;
+/**
+ This method is called when native ad play error.
+ */
+- (void)nativeAdVideoPlayError:(KSNativeAd *)nativeAd;
+/**
+ This method is called when native ad play pause,including system-induced and user-induced pauses
+ */
+- (void)nativeAdVideoPause:(KSNativeAd *)nativeAd;
+/**
+ This method is called when native ad play resume,including system resume and user resume.This method is not called when the video starts playing for the first time.
+ */
+- (void)nativeAdVideoResume:(KSNativeAd *)nativeAd;
 
 @end
 

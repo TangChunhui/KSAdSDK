@@ -19,5 +19,9 @@ typedef NS_ENUM(NSUInteger, KSAdDetailBrowseTaskStep) {
     KSAdDetailBrowseTaskStepFinish                          = 2,        //浏览落地页
 };
 
+typedef NS_ENUM(NSInteger, KSAdExtraRewardType) {
+    KSAdExtraRewardClick        = 1,    // 点击激励
+};
+
 #endif /* KSRewardedVideoAdDefines_h */
 

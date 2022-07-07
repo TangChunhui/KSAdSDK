@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 typedef KSLocation *_Nullable(^LocationBlock)(void);
 typedef NSString *_Nullable(^IdfaBlock)(void);
 typedef NSString *_Nullable(^IdfvBlock)(void);
+typedef NSString *_Nullable(^DeviceIdBlock)(void);
 
 @interface KSLocation : NSObject
 
@@ -30,6 +31,8 @@ typedef NSString *_Nullable(^IdfvBlock)(void);
 @property (nonatomic, copy) IdfaBlock idfaBlock;
 
 @property (nonatomic, copy) IdfvBlock idfvBlock;
+
+@property (nonatomic, copy) DeviceIdBlock deviceIdBlock;
 
 @end
 

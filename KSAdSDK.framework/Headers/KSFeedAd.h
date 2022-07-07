@@ -23,16 +23,24 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)setVideoSoundEnable:(BOOL)enable;
 
 - (void)updatePlayStatusWithPercent:(CGFloat)percent;
+- (void)setExposureContextIgnoreShowLog:(BOOL)ignoreShowLog;
 
 @end
 
 @protocol KSFeedAdDelegate <NSObject>
 @optional
+/**
+ This method is called when feed ad show everytime. Please don‘t use for exposure count. Please use 'feedAdDidShow' for exposure count.
+ */
 - (void)feedAdViewWillShow:(KSFeedAd *)feedAd;
 - (void)feedAdDidClick:(KSFeedAd *)feedAd;
 - (void)feedAdDislike:(KSFeedAd *)feedAd;
 - (void)feedAdDidShowOtherController:(KSFeedAd *)nativeAd interactionType:(KSAdInteractionType)interactionType;
 - (void)feedAdDidCloseOtherController:(KSFeedAd *)nativeAd interactionType:(KSAdInteractionType)interactionType;
+/**
+ This method is called when feed ad show. Each ad is called back only once
+ */
+- (void)feedAdDidShow:(KSFeedAd *)feedAd;
 
 @end
 

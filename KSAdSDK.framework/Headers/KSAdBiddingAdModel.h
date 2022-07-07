@@ -20,9 +20,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface KSAdBiddingAdModel : NSObject
+@interface KSAdBiddingAdV2Model : NSObject
 
-@property (nonatomic, copy) NSString *posId; // 必设
 @property (nonatomic, assign) NSInteger adCount; // 默认为1
 @property (nonatomic, assign) KSAdScreenDirection direction;
 @property (nonatomic, assign) NSInteger cpmBidFloor;
@@ -33,6 +32,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, nullable) NSDictionary *appTag;
 @property (nonatomic, strong, nullable) KSAdUserInfo *userInfo;
 @property (nonatomic, strong, nullable) KSAdRewardVideoModel *rewardVideoModel; //激励视频数据
+
+@end
+
+@interface KSAdBiddingAdModel : KSAdBiddingAdV2Model
+
+@property (nonatomic, copy) NSString *posId; // 必设
 
 @end
 

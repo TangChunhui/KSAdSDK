@@ -9,6 +9,7 @@
 
 #import "KSAd.h"
 #import "KSAdInteractionType.h"
+#import "KSAdSplashAdExtraDataModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -94,10 +95,15 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign, readonly) KSAdMaterialType materialType;
 
 - (id)initWithPosId:(NSString *)posId;
+- (void)setExtraData:(KSAdSplashAdExtraDataModel *)extraDataModel;
 /// load ad data
 - (void)loadAdData;
 /// server bidding load ad data
 - (void)loadAdDataWithResponse:(NSDictionary *)response;
+/**
+ server bidding load ad data plan 2
+ */
+- (void)loadAdDataWithResponseV2:(NSDictionary *)response;
 /// show splash ad in view, should be called after ksad_splashAdContentDidLoad:
 - (void)showInView:(UIView *)view;
 

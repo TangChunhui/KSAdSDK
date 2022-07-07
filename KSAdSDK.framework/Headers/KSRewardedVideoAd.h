@@ -10,6 +10,7 @@
 #import <UIKit/UIKit.h>
 #import "KSVideoAd.h"
 #import "KSRewardedVideoAdDefines.h"
+#import "KSInnerVideoAd.h"
 
 @class KSRewardedVideoModel;
 @protocol KSRewardedVideoAdDelegate;
@@ -20,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) KSRewardedVideoModel *rewardedVideoModel;
 @property (nonatomic, weak, nullable) id<KSRewardedVideoAdDelegate> delegate;
 @property (nonatomic, weak, nullable) id<KSRewardedVideoAdDelegate> rewardPlayAgainInteractionDelegate;
+@property (nonatomic, weak, nullable) id<KSInnerAdDelegate> innerDelegate;
 
 - (instancetype)initWithPosId:(NSString *)posId rewardedVideoModel:(KSRewardedVideoModel *)rewardedVideoModel;
 
@@ -91,6 +93,10 @@ NS_ASSUME_NONNULL_BEGIN
               hasReward:(BOOL)hasReward
                taskType:(KSAdRewardTaskType)taskType
         currentTaskType:(KSAdRewardTaskType)currentTaskType;
+/**
+ This method is called when the user close video ad,extra rewards verify.
+ */
+- (void)rewardedVideoAd:(KSRewardedVideoAd *)rewardedVideoAd extraRewardVerify:(KSAdExtraRewardType)extraRewardType;
 
 @end
 

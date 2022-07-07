@@ -37,11 +37,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)ksad_interstitialAdDidVisible:(KSInterstitialAd *)interstitialAd;
 /**
- * interstitial ad did skip (for video only)
- * @param playDuration played duration
- */
-- (void)ksad_interstitialAd:(KSInterstitialAd *)interstitialAd didSkip:(NSTimeInterval)playDuration;
-/**
  * interstitial ad did click
  */
 - (void)ksad_interstitialAdDidClick:(KSInterstitialAd *)interstitialAd;

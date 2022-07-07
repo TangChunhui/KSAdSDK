@@ -27,6 +27,10 @@ NS_ASSUME_NONNULL_BEGIN
  server bidding load ad data
 */
 - (void)loadAdDataWithResponse:(NSDictionary *)response;
+/**
+ server bidding load ad data plan 2
+ */
+- (void)loadAdDataWithResponseV2:(NSDictionary *)response;
 
 @end
 

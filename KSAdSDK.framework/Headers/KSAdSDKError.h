@@ -13,11 +13,15 @@
 typedef NS_ENUM(NSInteger, KSAdErrorCode) {
 
     KSAdErrorCodeNoError = 1, // 成功
+    
+    KSAdErrorCodeBidNotImageAdError = 3,//serverBidding返回了非图片类广告
 
     KSAdErrorCodeNetworkError = 40001, // 网络错误
     KSAdErrorCodeDataParse = 40002, // data数据解析错误
     KSAdErrorCodeDataEmpty = 40003, // data empty
     KSAdErrorCodeCacheError = 40004, // 缓存出错
+    KSAdErrorCodeImageDownloadError = 40007, // 图片下载失败
+    KSAdErrorCodeAdStyleMismatchError = 40008, // 返回的adStyle不是具体场景的adstyle
 
     KSAdErrorCodeNotVideoAd = 50001, // not a video ad
     KSAdErrorCodeParamWrong = 100001, // 参数有误

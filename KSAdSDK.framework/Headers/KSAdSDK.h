@@ -45,11 +45,11 @@
 #endif
 
 #if __has_include(<KSUSplashAd/KSSplashAdView.h>)
-    #import <KSUSplashAd/KSAdSplashManager.h>
     #import <KSUSplashAd/KSSplashAdView.h>
+    #import <KSUSplashAd/KSAdSplashAdExtraDataModel.h>
 #elif __has_include(<KSAdSDK/KSSplashAdView.h>)
-    #import <KSAdSDK/KSAdSplashManager.h>
     #import <KSAdSDK/KSSplashAdView.h>
+    #import <KSAdSDK/KSAdSplashAdExtraDataModel.h>
 #endif
 
 #if __has_include(<KSUInterstitialAd/KSInterstitialAd.h>)

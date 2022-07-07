@@ -37,7 +37,12 @@ NS_ASSUME_NONNULL_BEGIN
  server bidding load ad data
 */
 - (void)loadAdDataWithResponse:(NSDictionary *)response;
-
+/**
+ server bidding load ad data plan 2
+ 
+ @param response adx server传回来的response（媒体adx需替换bidEcpm为>0的数值）
+ */
+- (void)loadAdDataWithResponseV2:(NSDictionary *)response;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -40,6 +40,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+// 视频自动播放选项
+typedef NS_ENUM(NSInteger, KSAdFeedVideoAutoPlayType) {
+    KSAdFeedVideoAutoPlayTypeUnknown          = 0,
+    KSAdFeedVideoAutoPlayTypeAllNet           = 1,     //有网络（WiFi及流量）自动播放
+    KSAdFeedVideoAutoPlayTypeOnlyWifi         = 2,     //仅Wi-Fi下自动播放
+    KSAdFeedVideoAutoPlayTypeNon              = 3      //不自动播放
+};
+
 @interface KSAdSDKManager : NSObject
 
 /// SDK 版本号
@@ -47,6 +55,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// Auto play video on Non Wi-Fi environment or not, default is NO
 @property (nonatomic, assign, class) BOOL dataFlowAutoStart;
+/// Auto play video on all environment, default is Unknown
+@property (nonatomic, assign, class) KSAdFeedVideoAutoPlayType feedVideoAutoPlayType;
 /**
  * @brief start ad sdk
  * @param appId             ad app id
@@ -104,6 +114,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)setIdfaBlock:(IdfaBlock)idfaBlock;
 // optional, 设置idfv，请传原始值，不需要加密
 + (void)setIdfvBlock:(IdfvBlock)idfvBlock;
+// optional, 设置接入方deviceId
++ (void)setDeviceIdBlock:(DeviceIdBlock)deviceIdBlock;
 
 // optional, disable use network status, default is NO
 + (void)setDisableUseNetworkStatus:(BOOL)disable;
@@ -112,12 +124,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSString *)deviceId; //获取did
 /**
- * 获取SDK的bit请求报文token
+ * 获取SDK的bid请求报文token
  * @param model 中posId是必传的，其余参数可参考各类广告调用
  * @return 返回SDK的token
 */
 + (NSString *)getBidRequestToken:(KSAdBiddingAdModel *)model;
-
+/// 获取服务端竞价V2的请求报文token
+/// @param model 不需要传posId 但是在向服务端请求的时候posId必传
++ (NSString *)getBidRequestTokenV2:(KSAdBiddingAdV2Model *)model;
 @end
 
 NS_ASSUME_NONNULL_END
