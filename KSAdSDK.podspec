@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = "KSAdSDK"
-  s.version = "3.3.27"
+  s.version = "3.3.29"
   s.summary = "KSAdSDK."
   s.authors = {"chenyun"=>"chenyun@kuaishou.com"}
   s.homepage = "https://ssp.e.kuaishou.com/"
