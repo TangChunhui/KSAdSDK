@@ -11,10 +11,7 @@
 
 
 typedef NS_ENUM(NSInteger, KSAdErrorCode) {
-
     KSAdErrorCodeNoError = 1, // 成功
-    
-    KSAdErrorCodeBidNotImageAdError = 3,//serverBidding返回了非图片类广告
 
     KSAdErrorCodeNetworkError = 40001, // 网络错误
     KSAdErrorCodeDataParse = 40002, // data数据解析错误

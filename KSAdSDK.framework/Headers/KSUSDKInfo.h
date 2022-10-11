@@ -28,8 +28,6 @@ typedef NS_ENUM(NSInteger, KSAdSDKType) {
 @property (nonatomic, assign) BOOL programmaticRecommendation;
 @property (nonatomic, copy) void (^userInfoBlock)(KSAdUserInfo *);
 @property (nonatomic, readonly) KSAdUserInfo *userInfo;
-@property (nonatomic, copy) NSString *tkVersion;
-@property (nonatomic, copy) NSString *jsVersion;
 #ifdef KSADIsDebugging
 /// 只能调试使用，会直接覆盖currentApiHost的内容，线上严禁调用
 @property (nonatomic, copy) NSString *currentApiHostDebug;
@@ -41,6 +39,8 @@ typedef NS_ENUM(NSInteger, KSAdSDKType) {
 + (instancetype)sharedInstance;
 
 + (NSString *)SDKVersion;
+
++ (NSString *)TKVersion;
 
 + (NSString *)protocolVersion;
 

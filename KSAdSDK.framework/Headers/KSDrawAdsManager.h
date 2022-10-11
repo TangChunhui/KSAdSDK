@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface KSDrawAdsManager : NSObject
 
-@property (nonatomic, strong, readonly) NSArray<KSDrawAd *> *data;
+@property (nonatomic, copy, readonly) NSArray<KSDrawAd *> *data;
 - (instancetype)initWithPosId:(NSString *)posId;
 @property (nonatomic, weak, nullable) id<KSDrawAdsManagerDelegate> delegate;
 /**

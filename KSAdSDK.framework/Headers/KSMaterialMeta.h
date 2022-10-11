@@ -36,8 +36,6 @@ typedef NS_ENUM(int, KSAdSourceLogoType) {
 @property (nonatomic, assign) CGFloat appScore;
 /// downloadCountDesc.
 @property (nonatomic, copy) NSString *appDownloadCountDesc;
-
-
 /// ad description.
 @property (nonatomic, copy) NSString *adDescription;
 
@@ -47,13 +45,8 @@ typedef NS_ENUM(int, KSAdSourceLogoType) {
 /// display format of the in-feed ad, other ads ignores it.
 @property (nonatomic, assign) KSAdMaterialType materialType;
 
-
-
 // video duration
 @property (nonatomic, assign) NSInteger videoDuration;
-
-
-- (instancetype)initWithDictionary:(NSDictionary *)dict error:(NSError * __autoreleasing *)error;
 
 @property (nonatomic, strong) KSAdImage *videoCoverImage;
 @property (nonatomic, copy) NSString *videoUrl;

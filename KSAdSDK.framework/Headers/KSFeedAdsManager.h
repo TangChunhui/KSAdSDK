@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface KSFeedAdsManager : NSObject
 
 
-@property (nonatomic, strong, readonly) NSArray<KSFeedAd *> *data;
+@property (nonatomic, copy, readonly) NSArray<KSFeedAd *> *data;
 
 
 /**

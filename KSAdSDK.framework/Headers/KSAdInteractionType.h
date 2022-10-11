@@ -17,7 +17,7 @@ typedef NS_ENUM(NSInteger, KSAdMaterialType) {
     KSAdMaterialTypeUnkown      =       0,      // unknown
     KSAdMaterialTypeVideo       =       1,      // video
     KSAdMaterialTypeSingle      =       2,      // single image
-    KSAdMaterialTypeAtlas       =       3,      // multiple image
+    KSAdMaterialTypeAtlas       =       5,      // multiple image
 };
 
 
