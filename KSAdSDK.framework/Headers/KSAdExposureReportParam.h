@@ -17,10 +17,27 @@ typedef NS_ENUM(NSUInteger, KSAdExposureFailureCode) {
     KSAdExposureFailureExposurePriorityReduce  = 4,    // 曝光优先级降低
 };
 
+typedef NS_ENUM(NSUInteger, KSAdExposureAdnType) {
+    KSAdExposureAdnTypeKuaishou         = 1,    // 输给快手联盟其他广告
+    KSAdExposureAdnTypeOther            = 2,    // 输给其他ADN
+    KSAdExposureAdnTypeSelfSale         = 3,    // 输给自售广告主
+};
+
+typedef NSString* KSAdADNName;
+//平台定义
+extern KSAdADNName const KSAdADNNameChuanshanjia;
+extern KSAdADNName const KSAdADNNameGuangdiantong;
+extern KSAdADNName const KSAdADNNameBaidu;
+extern KSAdADNName const KSAdADNNameOther;
+
 @interface KSAdExposureReportParam : NSObject
 
 // 胜出者的ecpm报价
 @property (nonatomic, assign) NSInteger winEcpm;
+// 竞胜平台类型
+@property (nonatomic, assign) KSAdExposureAdnType adnType;
+// 竞胜平台名称，adnType=KSAdExposureAdnTypeOther时可以设置
+@property (nonatomic, copy) KSAdADNName adnName;
 
 @end
 

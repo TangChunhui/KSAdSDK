@@ -22,9 +22,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)setVideoSoundEnable:(BOOL)enable;
 
-- (void)updatePlayStatusWithPercent:(CGFloat)percent;
-- (void)setExposureContextIgnoreShowLog:(BOOL)ignoreShowLog;
-
 @end
 
 @protocol KSFeedAdDelegate <NSObject>

@@ -41,6 +41,10 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)ksad_interstitialAdDidClick:(KSInterstitialAd *)interstitialAd;
 /**
+ * interstitial ad did click skip
+ */
+- (void)ksad_interstitialAdDidClickSkip:(KSInterstitialAd *)interstitialAd;
+/**
  * interstitial ad will close
  */
 - (void)ksad_interstitialAdWillClose:(KSInterstitialAd *)interstitialAd;
